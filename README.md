@@ -40,4 +40,4 @@ I recommend setting both `ami_retain_count` and `ami_retain_days` to positive va
 
 ### Multi-Account Setups
 
-If you are using Teak's multi-account setup with separate CI/CD accounts for performing AMI builds and workload accounts for running services using buitl AMIs, the AMI Cleanomat should be deployed in each CI/CD account.
+If you are using Teak's multi-account setup with separate CI/CD accounts for performing AMI builds and workload accounts for running services using built AMIs, the AMI Cleanomat should be deployed in each CI/CD account.
