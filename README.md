@@ -36,7 +36,7 @@ module "cleanomat" {
 }
 ```
 
-I recommend setting both `ami_retain_count` and `ami_retain_days` to positive values, especially in production, such that you do not deregister AMIs that are still in use for infrequently updated services and to ensure that you retain source AMIs and EBS snapshots for a duration as may be required by your auditing and compliance needs.
+We suggest setting both `ami_retain_count` and `ami_retain_days` to positive values, especially in production, such that you do not deregister AMIs that are still in use for infrequently updated services and to ensure that you retain source AMIs and EBS snapshots for a duration as may be required by your auditing and compliance needs.
 
 ### Multi-Account Setups
 
