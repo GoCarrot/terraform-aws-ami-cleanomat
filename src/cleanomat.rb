@@ -38,12 +38,12 @@ module Cleanomat
       @workers = workers.times.map do
         Thread.new do
           while image = @queue.pop
-            @logger&.info("Deregistring #{image.name}")
+            @logger&.info("#{image.name} : Deregistring")
             @client.deregister_image(image_id: image.image_id)
 
             snapshots = image.block_device_mappings.lazy.map(&:ebs).map(&:snapshot_id).to_a
             snapshots.each do |snap|
-              @logger&.info("Deleting snapshot #{snap}")
+              @logger&.info("#{image.name}: Deleting snapshot #{snap}")
               @client.delete_snapshot(snapshot_id: snap)
             end
           end
