@@ -33,7 +33,7 @@ data "aws_default_tags" "tags" {}
 locals {
   lambda_name  = var.lambda_name
   logs_arn     = "arn:${data.aws_partition.current.partition}:logs:*:${data.aws_caller_identity.current.id}:log-group:/aws/lambda/${local.lambda_name}"
-  iam_role_arn = coalesce(var.lambda_iam_role_arn, try(aws_iam_role.cleanomat[0].arn))
+  iam_role_arn = coalesce(var.lambda_iam_role_arn, try(aws_iam_role.cleanomat[0].arn, null))
   our_tags     = var.tags
   tags         = { for key, value in local.our_tags : key => value if lookup(data.aws_default_tags.tags.tags, key, null) != value }
 }
