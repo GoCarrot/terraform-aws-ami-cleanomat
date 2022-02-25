@@ -56,6 +56,9 @@ module Cleanomat
       images.sort_by!(&:creation_date)
       groups = images.each_with_object({}) do |image, hash|
         name = image.name
+        split_pos = name.index('.')
+        next if split_pos.nil?
+
         prefix = name.slice(0, name.index('.'))
         hash[prefix] ||= []
         hash[prefix] << image
