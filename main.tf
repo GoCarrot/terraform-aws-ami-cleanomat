@@ -153,6 +153,10 @@ resource "aws_lambda_function" "cleanomat" {
 
   timeout = 900
 
+  tracing_config {
+    mode = var.lambda_tracing_mode
+  }
+
   environment {
     variables = {
       AMI_RETAIN_COUNT = var.ami_retain_count
