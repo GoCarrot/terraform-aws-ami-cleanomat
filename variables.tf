@@ -83,3 +83,9 @@ variable "lambda_tracing_mode" {
     error_message = "Valid values for var: lambda_tracing_mode are (PassThrough, Active)."
   }
 }
+
+variable "kms_key_arn" {
+  type        = string
+  description = "The ARN of a KMS key to encrypt the log group with."
+  default     = null
+}
