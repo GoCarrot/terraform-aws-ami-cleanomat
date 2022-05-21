@@ -72,3 +72,20 @@ variable "run_days_of_the_week" {
   description = "Days of the week to run the AMI cleanomat. Uses three letter all caps abbreviations, e.g. TUE-THU"
   default     = "MON-FRI"
 }
+
+variable "lambda_tracing_mode" {
+  type        = string
+  description = "Tracing mode for the Lambda function."
+  default     = "PassThrough"
+
+  validation {
+    condition     = contains(["PassThrough", "Active"], var.lambda_tracing_mode)
+    error_message = "Valid values for var: lambda_tracing_mode are (PassThrough, Active)."
+  }
+}
+
+variable "kms_key_arn" {
+  type        = string
+  description = "The ARN of a KMS key to encrypt the log group with.  Ensure that this key has a policy which allows CloudWatch Logs usage. See: https://web.archive.org/web/20220506080315/https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/encrypt-log-data-kms.html"
+  default     = null
+}

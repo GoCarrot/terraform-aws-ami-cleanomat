@@ -130,6 +130,7 @@ resource "aws_cloudwatch_log_group" "lambda" {
 
   name              = "/aws/lambda/${local.lambda_name}"
   retention_in_days = var.log_retention_in_days
+  kms_key_id        = var.kms_key_arn
 
   tags = local.tags
 }
@@ -152,6 +153,10 @@ resource "aws_lambda_function" "cleanomat" {
   publish          = true
 
   timeout = 900
+
+  tracing_config {
+    mode = var.lambda_tracing_mode
+  }
 
   environment {
     variables = {
