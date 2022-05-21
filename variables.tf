@@ -86,6 +86,6 @@ variable "lambda_tracing_mode" {
 
 variable "kms_key_arn" {
   type        = string
-  description = "The ARN of a KMS key to encrypt the log group with."
+  description = "The ARN of a KMS key to encrypt the log group with.  Ensure that this key has a policy which allows CloudWatch Logs usage. See: https://web.archive.org/web/20220506080315/https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/encrypt-log-data-kms.html"
   default     = null
 }
