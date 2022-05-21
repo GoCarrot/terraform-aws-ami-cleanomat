@@ -1,3 +1,14 @@
+## 0.0.5
+
+ENHANCEMENTS:
+
+* Support log group encryption by setting kms_key_arn variable (#1)
+* Support X-Ray tracing of Lambda (#1)
+
+SPECIAL THANKS
+
+* @MrJoy
+
 ## 0.0.4
 
 BUG FIXES:
