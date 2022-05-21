@@ -2,12 +2,12 @@
 
 ENHANCEMENTS:
 
-* Support log group encryption by setting kms_key_arn variable (#1)
-* Support X-Ray tracing of Lambda (#1)
+* Support log group encryption by setting kms_key_arn variable ([#1](https://github.com/GoCarrot/terraform-aws-ami-cleanomat/pull/1))
+* Support X-Ray tracing of Lambda ([#1](https://github.com/GoCarrot/terraform-aws-ami-cleanomat/pull/1))
 
-SPECIAL THANKS
+SPECIAL THANKS:
 
-* @MrJoy
+* [@MrJoy](https://github.com/MrJoy)
 
 ## 0.0.4
 
