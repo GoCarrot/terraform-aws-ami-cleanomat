@@ -1,3 +1,9 @@
+## 0.0.6
+
+ENHANCEMENTS:
+
+* Permit AWS provider v5.
+
 ## 0.0.5
 
 ENHANCEMENTS:
